@@ -1,0 +1,16 @@
+{
+    "label": "PS compile and run",
+    "type": "shell",
+    "command": "g++ -std=c++17 -O2 \"${file}\" -o \"${fileDirname}\\${fileBasenameNoExtension}.exe\"; Get-Content input.txt | .
+    \\${fileBasenameNoExtension}.exe | Set-Content output.txt",
+    "options": {
+        "shell": {
+            "executable": "powershell.exe"
+        }
+    },
+    "group": {
+        "kind": "build",
+        "isDefault": true
+    },
+    "problemMatcher": []
+}
