@@ -122,6 +122,10 @@ void recrevarr( int i,int arr[],int n){
     recrevarr(i+1,arr,n);
 
 }
+bool recPalindromeCheck( vector <int > arr ){
+    int low, high;  
+
+}
 
 int main(){
     string name ;
@@ -141,7 +145,7 @@ int main(){
         cout << arr[i] << " ";
         
     }
- cout << "hey there , github";
+
 
 
  return 0;
