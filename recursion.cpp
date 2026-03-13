@@ -11,6 +11,7 @@ void func(){
     func();
 
 }
+
 void printname(string name,int n){
     
 
@@ -25,6 +26,7 @@ void printname(string name,int n){
     
     }
 }
+
 void printnumbers(int n){
     
 
@@ -39,6 +41,7 @@ void printnumbers(int n){
     
     }
 }
+
 void printnumbers2(int i){
     // without global variable
 
@@ -53,6 +56,7 @@ void printnumbers2(int i){
     
     }
 }
+
 void backtracknum(int i,int n){
     
     if (i<n) return;
@@ -62,6 +66,7 @@ void backtracknum(int i,int n){
     }
     
 }
+
 void recsum(int n,int sum){
     if(n==0){
         cout << sum << "";
@@ -72,6 +77,7 @@ void recsum(int n,int sum){
         recsum(n-1,sum+n);
     }
 }
+
 int recursionsum(int n){
     if(n<=0) return 0;
     else {
@@ -81,6 +87,7 @@ int recursionsum(int n){
     return k;
 
 }
+
 int recursionsum1(int n){
     if(n<=0) return 0;
     else {
@@ -90,6 +97,7 @@ int recursionsum1(int n){
     
 
 }
+
 int recfactorial(int n){
     if(n<=0) return 1;
     else {
@@ -99,6 +107,7 @@ int recfactorial(int n){
     
 
 }
+
 int f=1;
 void recfactorial1(int n){
     if(n<=0){ 
@@ -122,6 +131,7 @@ void recrevarr( int i,int arr[],int n){
     recrevarr(i+1,arr,n);
 
 }
+
 bool recPalindromeCheck( vector <int > arr ){
     int low, high;  
 
@@ -136,17 +146,17 @@ int main(){
     cin  >> n ; 
     // recsum(n,0);
     // recfactorial1(n);
-    int arr[n];
-    for (int i=0; i<n;i++){
-        cin >> arr[i] ;
-    }
-    recrevarr(0,arr,n);
-    for (int i=0; i<n;i++){
-        cout << arr[i] << " ";
+    // int arr[n];
+    // for (int i=0; i<n;i++){
+    //     cin >> arr[i] ;
+    // }
+    // recrevarr(0,arr,n);
+    // for (int i=0; i<n;i++){
+    //     cout << arr[i] << " ";
         
-    }
-
-
+    // }
+     printnumbers2(5);
+    
 
  return 0;
 }
