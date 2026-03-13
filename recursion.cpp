@@ -138,7 +138,7 @@ bool recPalindromeCheck( vector <int > arr ){
 }
 
 int main(){
-    string name ;
+    // string name ;
     int n;
     // cout <<  "enter the name " << endl ;
     // cin >> name ;
@@ -155,7 +155,7 @@ int main(){
     //     cout << arr[i] << " ";
         
     // }
-     printnumbers2(5);
+     backtracknum(33,5);
 
     
 

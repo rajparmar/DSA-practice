@@ -1,16 +1,18 @@
 {
-    "label": "PS compile and run",
-    "type": "shell",
-    "command": "g++ -std=c++17 -O2 \"${file}\" -o \"${fileDirname}\\${fileBasenameNoExtension}.exe\"; Get-Content input.txt | .
-    \\${fileBasenameNoExtension}.exe | Set-Content output.txt",
-    "options": {
-        "shell": {
-            "executable": "powershell.exe"
-        }
-    },
-    "group": {
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build C++",
+      "type": "shell",
+      "command": "cmd",
+      "args": [
+        "/c",
+        "if exist \"${workspaceFolder}/output/${fileBasenameNoExtension}.exe\" del \"${workspaceFolder}/output/${fileBasenameNoExtension}.exe\" && g++ \"${file}\" -o \"${workspaceFolder}/output/${fileBasenameNoExtension}.exe\""
+      ],
+      "group": {
         "kind": "build",
         "isDefault": true
-    },
-    "problemMatcher": []
+      }
+    }
+  ]
 }
