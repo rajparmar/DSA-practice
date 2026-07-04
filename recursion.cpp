@@ -155,7 +155,7 @@ int main(){
     //     cout << arr[i] << " ";
         
     // }
-    backtracknum(5);
+    backtracknum(2,3);
 
     
 
