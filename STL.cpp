@@ -7,7 +7,7 @@ int main (){
     // cout << last ;
      vector<int> arr;
  int x,y,z,a,b,c,d,e;
- // here you can see what happens when cin >> is used as a condition it yes true until null is passed
+//  here you can see what happens when cin >> is used as a condition it yes true until null is passed
     while (cin >> x ){
      arr.push_back(x);
     }
