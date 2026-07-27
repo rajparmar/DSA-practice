@@ -21,14 +21,15 @@ int main (){
     }
 
    cin >> fren;
-   int inputnum[fren];
+
+   vector <char> chh;
     for (int i =0 ; i<fren; i++){
-        cin >> inputnum[i];
-        
+        cin >> chh[i]; 
     }
     for (int i =0 ; i<fren; i++){
-        cout << inputnum[i] << "-->" << hash[inputnum[i]] << endl;
-    
+
+        cout << chh[i] << "-->" << hash[chh[i]-'a'] << endl;
+        
     }
 
 
