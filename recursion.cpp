@@ -123,7 +123,10 @@ void recfactorial1(int n){
 }
 
 void recrevarr( int i,int arr[],int n){
-    if (i==sizeof(arr)/2){
+    if (
+        i>= n-i
+        // i==sizeof(arr)/2
+    ){
         return;
     }
      
@@ -132,32 +135,69 @@ void recrevarr( int i,int arr[],int n){
 
 }
 
-bool recPalindromeCheck( vector <int > arr ){
-    int low, high;  
 
+
+
+
+
+
+
+
+
+
+
+bool recPalindromeCheck( int i ,string vec  ){
+    if (i>=vec.size()-i-1) return true;
+    
+    if (vec[i]!=vec[vec.size()-i-1]) return false;
+
+    return recPalindromeCheck(i+1,vec);
+    // time comp = n/2 and same for space complx
 }
+
+int  recfibonacci(int n){
+   if(n=0) return 0;
+   if(n=1) return 1;
+
+   return recfibonacci(n)+ recfibonacci(n-1);
+    
+}
+
 
 int main(){
     // string name ;
     int n;
+    cin  >> n ; 
     // cout <<  "enter the name " << endl ;
     // cin >> name ;
     // cout << "Enter the how many times it should be printed "<< endl;
-    cin  >> n ; 
     // recsum(n,0);
     // recfactorial1(n);
     // int arr[n];
     // for (int i=0; i<n;i++){
     //     cin >> arr[i] ;
     // }
+
     // recrevarr(0,arr,n);
     // for (int i=0; i<n;i++){
     //     cout << arr[i] << " ";
         
     // }
-    backtracknum(2,3);
-
+    int inp;
     
+    // vector <int> vec; 
+    // for (int i=0; i<n ;i++){
+    //     cin >> inp;
+    //    vec.push_back(inp);
+
+    // }
+    // string st;
+    // cin >> st;
+    // cout << boolalpha;
+    // cout << recPalindromeCheck(0,st);
+    // backtracknum(5,1);
+
+    recfibonacci(n);
 
  return 0;
 }
