@@ -7,7 +7,7 @@ int main (){
     fren ; 
     string s; 
     cin >> s;
-    // cin >> n;
+  
     // vector <int> vec;
     // for (int i=0; i<n;i++){
     //     cin >> inp;
@@ -16,13 +16,13 @@ int main (){
     
     // precomputing 
     vector <int> hash(26,0);
-    for (int i=0; i<n; i++){
-       hash[s[i]-97]++;
+    for (int i=0; i<s.size(); i++){
+       hash[s[i]-'a']++;
     }
 
    cin >> fren;
 
-   vector <char> chh;
+   vector <char> chh(fren);
     for (int i =0 ; i<fren; i++){
         cin >> chh[i]; 
     }
