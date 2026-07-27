@@ -156,10 +156,10 @@ bool recPalindromeCheck( int i ,string vec  ){
 }
 
 int  recfibonacci(int n){
-   if(n=0) return 0;
-   if(n=1) return 1;
+   if(n==0) return 0;
+   if(n==1) return 1;
 
-   return recfibonacci(n)+ recfibonacci(n-1);
+   return recfibonacci(n-1)+ recfibonacci(n-2);
     
 }
 
@@ -197,7 +197,7 @@ int main(){
     // cout << recPalindromeCheck(0,st);
     // backtracknum(5,1);
 
-    recfibonacci(n);
+    cout << recfibonacci(n);
 
  return 0;
 }
