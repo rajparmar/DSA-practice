@@ -2,18 +2,22 @@
 using namespace std;
 
 int main (){
-    int n, inp , fren ; 
-    cin >> n;
-    vector <int> vec;
-    for (int i=0; i<n;i++){
-        cin >> inp;
-        vec.emplace_back(inp);
-    }
+    int n, 
+    inp , 
+    fren ; 
+    string s; 
+    cin >> s;
+    // cin >> n;
+    // vector <int> vec;
+    // for (int i=0; i<n;i++){
+    //     cin >> inp;
+    //     vec.emplace_back(inp);
+    // }
     
     // precomputing 
-    vector <int> hash(13,0);
+    vector <int> hash(26,0);
     for (int i=0; i<n; i++){
-       hash[vec[i]]++;
+       hash[s[i]-97]++;
     }
 
    cin >> fren;
