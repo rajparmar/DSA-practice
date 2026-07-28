@@ -3,7 +3,7 @@ using namespace std;
 
 int main (){
     int n, 
-    inp , 
+    // inp , 
     fren ; 
     string s; 
     cin >> s;
@@ -15,9 +15,9 @@ int main (){
     // }
     
     // precomputing 
-    vector <int> hash(26,0);
+    vector <int> hash(256,0);
     for (int i=0; i<s.size(); i++){
-       hash[s[i]-'a']++;
+       hash[s[i]]++;
     }
 
    cin >> fren;
@@ -28,7 +28,7 @@ int main (){
     }
     for (int i =0 ; i<fren; i++){
 
-        cout << chh[i] << "-->" << hash[chh[i]-'a'] << endl;
+        cout << chh[i] << "-->" << hash[chh[i]] << endl;
         
     }
 
