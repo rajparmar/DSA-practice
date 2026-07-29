@@ -1,3 +1,5 @@
+// Memoizatioin 
+
 // #include <bits/stdc++.h>
 // using namespace std;
 
@@ -19,6 +21,7 @@
 
 // tc & sc = O(n) 
 
+// Tabulation
 
 // #include <bits/stdc++.h>
 // using namespace std;
