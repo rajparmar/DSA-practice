@@ -15,7 +15,8 @@ int main (){
     // }
     
     // precomputing 
-    vector <int> hash(256,0);
+    // vector <int> hash(256,0);
+    unordered_map <char,int> hash;
     for (int i=0; i<s.size(); i++){
        hash[s[i]]++;
     }
@@ -31,7 +32,7 @@ int main (){
         cout << chh[i] << "-->" << hash[chh[i]] << endl;
         
     }
-
+    
 
 
 
@@ -39,3 +40,63 @@ int main (){
 
     return 0;
 }
+
+// using map for hashing
+
+// int main(){ 
+//     int n ; 
+//     cin >> n;
+//     //making the array 
+//     vector <int> vec;
+//      map <int , int> mapp;
+//     for(int i=0;i<n;i++){
+//       int input ;
+//       cin >> input;
+//         vec.push_back(input);
+//         // precomputing 
+      
+//        mapp[vec[i]]++;
+//     }
+
+//     int q;
+//     cin >>q ;
+//     while(q--){
+//         int num;
+//         cin >> num;
+//         // fetching 
+//         cout << num << "-->" << mapp[num] << endl;
+//     }
+    
+
+
+//     return 0;
+// }
+
+// int main(){ 
+//     // int n ; 
+//     // cin >> n;
+//     //making the array 
+//     vector <int> vec;
+//      map <int , int> mapp;
+//     for(int i=0;i<n;i++){
+//       int input ;
+//       cin >> input;
+//         vec.push_back(input);
+//         // precomputing 
+      
+//        mapp[vec[i]]++;
+//     }
+
+//     int q;
+//     cin >>q ;
+//     while(q--){
+//         int num;
+//         cin >> num;
+//         // fetching 
+//         cout << num << "-->" << mapp[num] << endl;
+//     }
+    
+
+
+//     return 0;
+// }
