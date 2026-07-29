@@ -32,6 +32,40 @@ void subsum(int i, vector<int> &a, vector<int> &v, int sum, int s)
 
     return;
 }
+void subsum1(int i, vector<int> &a, vector<int> &v, int sum, int s)
+{
+    if (i >= a.size())
+    {
+        if (s == sum)
+        {
+            cout << "{";
+
+            for (int i = 0; i < v.size(); i++)
+            {
+                cout << v[i];
+
+                if (i != v.size() - 1)
+                    cout << ",";
+            }
+
+            cout << "}" << endl;
+        }
+        return;
+    }
+
+    //without taking the element 
+    subsum(i + 1, a, v, sum, s);
+  
+    v.push_back(a[i]);
+    s += a[i];
+    //after taking the element 
+    subsum(i + 1, a, v, sum, s);
+    
+    v.pop_back();
+   
+
+    return;
+}
 
 int main()
 {
@@ -49,6 +83,7 @@ int main()
     int s = 0;
 
     subsum(0, a, v, sum, s);
+    subsum1(0, a, v, sum, s);
 
     return 0;
 }
