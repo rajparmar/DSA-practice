@@ -18,6 +18,7 @@ void subsum(int i, vector<int> &a, vector<int> &v, int sum, int s)
             }
 
             cout << "}" << endl;
+            return;
         }
         return;
     }
@@ -30,7 +31,7 @@ void subsum(int i, vector<int> &a, vector<int> &v, int sum, int s)
     s -= a[i];
     subsum(i + 1, a, v, sum, s);
 
-    return;
+    return; 
 }
 void subsum1(int i, vector<int> &a, vector<int> &v, int sum, int s)
 {
@@ -54,18 +55,53 @@ void subsum1(int i, vector<int> &a, vector<int> &v, int sum, int s)
     }
 
     //without taking the element 
-    subsum(i + 1, a, v, sum, s);
+    subsum1(i + 1, a, v, sum, s);
   
     v.push_back(a[i]);
     s += a[i];
     //after taking the element 
-    subsum(i + 1, a, v, sum, s);
+    subsum1(i + 1, a, v, sum, s);
     
     v.pop_back();
    
 
     return;
 }
+
+bool onesubsum(int i, vector<int> &a, vector<int> v, int sum, int s)
+{
+    if (i >= a.size())
+    {
+        if (s == sum)
+        {
+            cout << "{";
+
+            for (int i = 0; i < v.size(); i++)
+            {
+                cout << v[i];
+
+                if (i != v.size() - 1)
+                    cout << ",";
+            }
+
+            cout << "}" << endl;
+            return true;
+        }
+        return false;
+    }
+
+    v.push_back(a[i]);
+    s += a[i];
+    if ( onesubsum(i + 1, a, v, sum, s)== true ) return true;
+
+    v.pop_back();
+    s -= a[i];
+    if (onesubsum(i + 1, a, v, sum, s)==true) return true;
+
+    return false ;
+}
+
+
 
 int main()
 {
@@ -81,7 +117,8 @@ int main()
     int sum;
     cin >> sum;
     int s = 0;
-
+    
+     onesubsum(0, a, v, sum, s);
     subsum(0, a, v, sum, s);
     subsum1(0, a, v, sum, s);
 
