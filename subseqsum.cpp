@@ -68,7 +68,7 @@ void subsum1(int i, vector<int> &a, vector<int> &v, int sum, int s)
     return;
 }
 
-bool onesubsum(int i, vector<int> &a, vector<int> v, int sum, int s)
+bool onesubsum(int i, vector<int> &a, vector<int> &v, int sum, int s)
 {
     if (i >= a.size())
     {
@@ -85,6 +85,7 @@ bool onesubsum(int i, vector<int> &a, vector<int> v, int sum, int s)
             }
 
             cout << "}" << endl;
+            // v.clear();
             return true;
         }
         return false;
@@ -101,7 +102,46 @@ bool onesubsum(int i, vector<int> &a, vector<int> v, int sum, int s)
     return false ;
 }
 
+int countsubseq(int i,vector <int> a,int sum , int s ){
+    if(i>=a.size()){
+        if(s==sum){
+            return 1;
+        }
+        return 0;
+    }
+    
+    s+=a[i];
+   
+    int c1 = countsubseq(i+1,a,sum,s);
 
+    s-=a[i];
+ 
+    int c2 = countsubseq(i+1,a,sum,s);
+    
+    return c1+c2;
+
+}
+
+int countsubseq1(int i,vector <int> a,int sum , int s ){
+    if(i>=a.size()){
+        if(s==sum){
+            return 1;
+        }
+        return 0;
+    }
+
+    int c1 =countsubseq1(i+1,a,sum,s);
+  
+    s+=a[i];
+   
+
+    int c2= countsubseq1(i+1,a,sum,s);
+
+    
+  
+
+    return c1+c2;
+}
 
 int main()
 {
@@ -119,8 +159,10 @@ int main()
     int s = 0;
     
      onesubsum(0, a, v, sum, s);
+    v.clear();
     subsum(0, a, v, sum, s);
     subsum1(0, a, v, sum, s);
-
+    cout << countsubseq(0,a,sum,s) << endl;
+    cout << countsubseq1(0,a,sum,s) << endl;
     return 0;
 }
