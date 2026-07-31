@@ -2,16 +2,20 @@
 using namespace std;
    
 void merge(vector<int> &a,int low, int mid , int high){
+    vector <int> k;
     int left =low ;
     int right=mid +1;
       while (left<=mid&&right<=high){
         if(a[left]>a[right]){
-            swap(a[left],a[right]);
-            left++;
+            k.push_back(a[right]);
+
+            right++;
         }
-        else left++;
+        else k.push_back(a[left]);
+        left++;
 
       }
+      
       
 
     
