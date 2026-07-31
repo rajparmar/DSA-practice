@@ -2,6 +2,9 @@
 using namespace std;
 
 int main (){
-    cout << 'b'*'a';
+    int a=2;
+    int b=3;
+   swap(a,b);
+    cout << a<< b ;
     return 0;
 }
