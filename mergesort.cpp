@@ -11,11 +11,26 @@ void merge(vector<int> &a,int low, int mid , int high){
 
             right++;
         }
-        else k.push_back(a[left]);
+        else {
+            k.push_back(a[left]);
         left++;
+    }
 
       }
+      while(right>high&&left<=mid){
+        k.push_back(a[left]);
+        left++;
+      }
+      while(left>mid&&right<=high){
+        k.push_back(a[right]);
+        right++;
+      }
       
+      
+          
+     for(int i =low ;i<=high;i++){
+        a[i]=k[i-low];
+     }
       
 
     
@@ -34,6 +49,9 @@ void merge(vector<int> &a,int low, int mid , int high){
      merge(arr,low,mid,high);
    
    }
+
+
+
 int main (){
     int n, inp, low , high ;
     cin >> n;
