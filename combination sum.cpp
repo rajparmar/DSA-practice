@@ -34,18 +34,19 @@ int main()
         cin >> inp;
         a.push_back(inp);
     }
-    int target ;
+    int target;
     cin >> target;
 
     set<multiset<int>> ans;
-    
-    multiset<int> v;
+
     f(0, a, target, v, ans);
-    for(auto x :ans){
-        cout << "["<< endl;
-        for(auto y : x){
-            cout <<y;
+    for (auto x : ans)
+    {
+        cout << "[" ;
+        for (auto y : x)
+        {
+            cout << y << " ";
         }
-        cout << "[" << endl;
+            cout << "]" << endl;
     }
 }
