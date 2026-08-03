@@ -38,6 +38,7 @@ int main()
     cin >> target;
 
     set<multiset<int>> ans;
+    
     multiset<int> v;
     f(0, a, target, v, ans);
     for(auto x :ans){
