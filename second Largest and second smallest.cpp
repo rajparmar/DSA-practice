@@ -118,9 +118,9 @@ for(int i=1;i<n;i++){
     }else if (arr[i]>small&&arr[i]<ssmall){
         ssmall=arr[i];
     }
-    return ssmall;
     
 }
+return ssmall;
 
 
  }
@@ -129,9 +129,10 @@ for(int i=1;i<n;i++){
 
      bool checkSorted( int arr[],int n){
             for(int i=1;i<n;i++){
-                if(arr[i]<=arr[i+1]){
+                if(arr[i-1]>arr[i]){
+                    return false;
+                }
                     
-                }else return false;
             }
           return true;
      }
@@ -166,7 +167,7 @@ int main(){
     // cout << slargest(arr,n);
     // cout << smallest(arr,n);
     // cout << ssmallest(arr,n);
-    cout << checkSorted(arr,n);
+    cout << boolalpha << checkSorted(arr,n);
 
 
 }
