@@ -137,7 +137,13 @@ return ssmall;
           return true;
      }
 
-
+    void removeDuplicates(int arr[],int n){
+       set<int> unique;
+       for(int i=0;i<n;i++){
+        
+       }
+      
+    }
 
 
 
@@ -167,7 +173,8 @@ int main(){
     // cout << slargest(arr,n);
     // cout << smallest(arr,n);
     // cout << ssmallest(arr,n);
-    cout << boolalpha << checkSorted(arr,n);
+    // cout << boolalpha << checkSorted(arr,n);
+    removeDuplicates(arr,n);
 
 
 }
