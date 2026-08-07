@@ -140,7 +140,12 @@ return ssmall;
     void removeDuplicates(int arr[],int n){
        set<int> unique;
        for(int i=0;i<n;i++){
-        
+          unique.insert(arr[i]);
+       }
+        int index=0;
+       for(auto x: unique){
+         arr[index]=x;
+         index++;
        }
       
     }
@@ -164,17 +169,16 @@ int main(){
     }
     cout << endl;
     
-    for (auto x :arr){
-        cout << x << " ";
-    }
-    cout << endl;
-
+    
     // cout << largest(arr,n);
     // cout << slargest(arr,n);
     // cout << smallest(arr,n);
     // cout << ssmallest(arr,n);
     // cout << boolalpha << checkSorted(arr,n);
     removeDuplicates(arr,n);
-
-
+    
+    for (auto x :arr){
+        cout << x << " ";
+    }
+    cout << endl;
 }
