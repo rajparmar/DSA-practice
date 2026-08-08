@@ -8,7 +8,7 @@ using namespace std;
 
    //2nd approach
    int larg=arr[0];
-   for(int i =1;i<sizeof(arr);i++){
+   for(int i =1;i<n;i++){
       if(larg<arr[i]) larg=arr[i];
    }
    return larg;
@@ -150,7 +150,31 @@ return ssmall;
       
     }
 
+vector<int> intsec(int arr1[],int n1,int arr2[],int n2){
+    // // 1st approach
+    // vector<int> visited(n2,0);
+    // vector<int> intersection;
+    //    int j=0;
+    //        for(int i=0;i<n1;i++){
+            
+    //          for(int j=0;j<n2;j++){
+    //              if(arr1[i]<arr2[j]) break;
+    //             if(arr1[i]==arr2[j]&&visited[j]==0) {
+    //                  intersection.push_back(arr2[j]);
+    //                  visited[j]=1;
+    //                  break ;
+    //                 }
+    //             }
+    //         }
+    //         return intersection;
 
+    //2nd approach 
+            
+               int p1=0;
+               int p2=0;
+               
+               
+} 
 
 
 
@@ -161,11 +185,19 @@ return ssmall;
 int main(){
     int n;
     cin >> n;
-
+    
     int arr[n];
-
+    
     for (int i =0;i<n;i++){
-       cin >> arr[i];
+        cin >> arr[i];
+    }
+    int n2;
+    cin >> n2;
+
+    int arr2[n2];
+
+    for (int i =0;i<n2;i++){
+       cin >> arr2[i];
     }
     cout << endl;
     
@@ -175,10 +207,18 @@ int main(){
     // cout << ssmallest(arr,n);
     // cout << boolalpha << checkSorted(arr,n);
     // removeDuplicates(arr,n);
-    
+    vector<int> intersection = intsec(arr,n,arr2,n2);
 
     
     for (auto x :arr){
+        cout << x << " ";
+    }
+    cout << endl;
+    for (auto x :arr2){
+        cout << x << " ";
+    }
+    cout << endl;
+    for (auto x :intersection){
         cout << x << " ";
     }
     cout << endl;

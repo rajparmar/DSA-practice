@@ -3,14 +3,17 @@ using namespace std;
 
 int main (){
     // vector<int > a ={1,2,3};
-int n =4;
-     vector<vector<int>> a(n,vector<int>(n,0));
-     for( auto x: a){
-        for (auto y :x){
-            cout << y;
-                }
-                cout <<endl;
-     }
+int n =5;
+    //  vector<vector<int>> a(n,vector<int>(n,0));
+    //  for( auto x: a){
+    //     for (auto y :x){
+    //         cout << y;
+    //             }
+    //             cout <<endl;
+    //  }
+    for(n;n<10;n++){
+        cout << n;  
+    }
 
     // swap(a[0],a[0]);
 
