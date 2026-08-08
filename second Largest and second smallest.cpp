@@ -153,7 +153,7 @@ return ssmall;
 vector<int> intsec(int arr1[],int n1,int arr2[],int n2){
     // // 1st approach
     // vector<int> visited(n2,0);
-    // vector<int> intersection;
+    vector<int> intersection;
     //    int j=0;
     //        for(int i=0;i<n1;i++){
             
@@ -172,13 +172,57 @@ vector<int> intsec(int arr1[],int n1,int arr2[],int n2){
             
                int p1=0;
                int p2=0;
-               
+            while(p1<n1&&p2<n2){
+                
+                if(arr1[p1]==arr2[p2]) {
+                    intersection.push_back(arr1[p1]);
+                    p1++;
+                    p2++;
+                }
+                else if(arr1[p1]<arr2[p2]) p1++;
+                  else if(arr1[p1]>arr2[p2]) p2++;
+                  
+            }
+            return intersection;
                
 } 
 
 
 
+int maxSubArray(int arr[],int n,int k){
 
+    //approach 1 
+    // int max1=0;
+    // for(int i =0;i<n;i++){
+    //     int sum=0;
+    //     int count=0;
+    //     for(int j=i;j<n;j++){
+    //           sum+=arr[j];
+    //           count++;
+    //           if(sum==k){
+    //             max1=max(max1,count);
+    //             break;
+    //           }else if(sum>k) break;
+    //     }
+    // }
+    // return max1;
+
+    //approach 2 
+    int presum =0;
+    int max1=0;
+    map<long,int> hash;
+    for(int i =0;i<n;i++){
+        presum+=arr[i];
+        if(presum==k) max1=i+1;
+        hash[presum]=i;
+       int s=presum-k;
+        if(hash.find(s)!=hash.end()){
+            auto it= hash.find(s);
+            max1=max(max1,i-(*it).second);
+        }
+    }
+    return max1;
+}
 
 
 
@@ -191,13 +235,22 @@ int main(){
     for (int i =0;i<n;i++){
         cin >> arr[i];
     }
-    int n2;
-    cin >> n2;
-
-    int arr2[n2];
-
-    for (int i =0;i<n2;i++){
-       cin >> arr2[i];
+    cout << endl;
+    int k ;
+    cin >> k;
+    // int n2;
+    // cin >> n2;
+    
+    // int arr2[n2];
+    
+    // for (int i =0;i<n2;i++){
+        //    cin >> arr2[i];
+    // }
+    // cout << endl;
+    
+    //for printing the arrays 
+    for (auto x :arr){
+        cout << x << " ";
     }
     cout << endl;
     
@@ -207,19 +260,21 @@ int main(){
     // cout << ssmallest(arr,n);
     // cout << boolalpha << checkSorted(arr,n);
     // removeDuplicates(arr,n);
-    vector<int> intersection = intsec(arr,n,arr2,n2);
+    // vector<int> intersection = intsec(arr,n,arr2,n2);
+    cout << maxSubArray(arr,n,k);
 
-    
-    for (auto x :arr){
-        cout << x << " ";
-    }
-    cout << endl;
-    for (auto x :arr2){
-        cout << x << " ";
-    }
-    cout << endl;
-    for (auto x :intersection){
-        cout << x << " ";
-    }
-    cout << endl;
+
+
+    // for (auto x :arr2){
+    //     cout << x << " ";
+    // }
+    // cout << endl;
+    // for (auto x :intersection){
+    //     cout << x << " ";
+    // }
+    // cout << endl;
+
+
+
+    return 0;
 }
