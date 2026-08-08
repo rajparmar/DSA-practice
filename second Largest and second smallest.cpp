@@ -169,13 +169,14 @@ int main(){
     }
     cout << endl;
     
-    
     // cout << largest(arr,n);
     // cout << slargest(arr,n);
     // cout << smallest(arr,n);
     // cout << ssmallest(arr,n);
     // cout << boolalpha << checkSorted(arr,n);
-    removeDuplicates(arr,n);
+    // removeDuplicates(arr,n);
+    
+
     
     for (auto x :arr){
         cout << x << " ";
