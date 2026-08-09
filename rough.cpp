@@ -3,7 +3,7 @@ using namespace std;
 
 int main (){
     // vector<int > a ={1,2,3};
-//   int n1=n2=5;
+//int n1=5;   
 //    map<long,int> hash;
 //    cout << hash[4];
     //  vector<vector<int>> a(n,vector<int>(n,0));
