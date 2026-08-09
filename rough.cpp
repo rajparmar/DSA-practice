@@ -3,7 +3,9 @@ using namespace std;
 
 int main (){
     // vector<int > a ={1,2,3};
-int n1,n2 =5;
+//   int n1=n2=5;
+//    map<long,int> hash;
+//    cout << hash[4];
     //  vector<vector<int>> a(n,vector<int>(n,0));
     //  for( auto x: a){
     //     for (auto y :x){
@@ -14,7 +16,7 @@ int n1,n2 =5;
     // for(n;n<10;n++){
     //     cout << n;  
     // }
-    cout << n1 << " " << n2;
+    // cout << n1 << " " << n2;
 
     // swap(a[0],a[0]);
 
