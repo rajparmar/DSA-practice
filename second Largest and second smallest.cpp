@@ -225,6 +225,28 @@ int maxSubArray(int arr[],int n,int k){
 }
 
 
+int maxSubArray(vector<int>& nums) {
+        int sum=0;
+        int maxi=INT_MIN;
+        pair<int,int> subarray;
+        int j=0;
+        for(int i=0;i<nums.size();i++){
+            sum+=nums[i];
+            
+            if(maxi<sum){
+                maxi=sum;
+                subarray={j,i};
+            }
+            
+            if(sum<0) {
+                sum=0;
+                j=i+1;
+            }
+        }
+        
+        return maxi;
+    }
+
 
 int main(){
     int n;
@@ -236,8 +258,8 @@ int main(){
         cin >> arr[i];
     }
     cout << endl;
-    int k ;
-    cin >> k;
+    // int k ;
+    // cin >> k;
     // int n2;
     // cin >> n2;
     
@@ -261,7 +283,8 @@ int main(){
     // cout << boolalpha << checkSorted(arr,n);
     // removeDuplicates(arr,n);
     // vector<int> intersection = intsec(arr,n,arr2,n2);
-    cout << maxSubArray(arr,n,k);
+    // cout << maxSubArray(arr,n,k);
+     
 
 
 

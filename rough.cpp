@@ -2,7 +2,15 @@
 using namespace std;
 
 int main (){
-    // vector<int > a ={1,2,3};
+    vector<int > a ;
+    a[3]=4;
+  
+   
+        cout << a[3];
+    
+
+
+
 //int n1=5;   
 //    map<long,int> hash;
 //    cout << hash[4];
