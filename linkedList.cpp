@@ -6,7 +6,7 @@ using namespace std;
        int val;
        node* next;
        node(){
-         val=NULL;
+         val=0;
          next=nullptr;
        }
        node(int k){
@@ -21,12 +21,13 @@ using namespace std;
 
    node* removekth(node* head,int k){
       if(head==NULL||head->next==nullptr) return nullptr;
+      node* temp= head;
       if(k==1){
         node*temp = head;
         head=head->next;
         delete(temp);
-      }else if(k>1){
-        node* temp= head;
+        return head;
+      }else if(k>1&&temp!=nullptr){
         node* prev=nullptr;
         int cnt=1;
         while(temp){
@@ -91,9 +92,11 @@ using namespace std;
       else{
         node* temp =head;
         int cnt =1;
-        while(cnt<k-1){
+        while(cnt<k-1&&temp!=nullptr){
           temp=temp->next; 
+          cnt++;
         }
+        if(temp==nullptr) return head;
         // node* newnode =new node(val,temp->next);
         newnode->next=temp->next;
           temp->next=newnode;
@@ -104,7 +107,7 @@ using namespace std;
 
 
 int main(){
-    vector<int> arr = {1,2,3,4,5,7};
+    vector<int> arr = {1,2,3,4,5,6};
     node* head = new node(arr[0]);
     node* mover = head;
 
