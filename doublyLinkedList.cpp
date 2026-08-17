@@ -46,6 +46,7 @@ using namespace std;
                delete(temp);
                return head;
             }
+            temp=temp->next;
             cnt++;
         }
         if(temp->next!=nullptr&&cnt==k){
@@ -128,9 +129,9 @@ using namespace std;
 
 
 
-   
+
 int main(){
-    vector<int> arr = {1,2,3,4,5,6};
+    vector<int> arr = {1,2,3,4,5,7};
     node* head = new node(arr[0]);
     node* mover = head;
 
@@ -142,6 +143,16 @@ int main(){
         mover->next=temp;
         mover=mover->next;
     } 
+    
+    //printing the DLL before deletion 
+
+    node*temp= head;
+    while(temp){
+        cout << temp->val << " ";
+        temp=temp->next;
+    }
+
+    
     //INPUTS:
     int k;
     cin>> k;
