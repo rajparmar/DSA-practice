@@ -80,9 +80,25 @@ using namespace std;
    
         }
         return head;
+   }
 
-      
-      
+   node* insertatk(node*head,int k,int val){
+     node* newnode=  new node(val);
+    if(k==1){
+        newnode->next=head;
+        head=newnode;
+      }
+      else{
+        node* temp =head;
+        int cnt =1;
+        while(cnt<k-1){
+          temp=temp->next; 
+        }
+        // node* newnode =new node(val,temp->next);
+        newnode->next=temp->next;
+          temp->next=newnode;
+      }
+      return head;
 
    }
 
@@ -100,6 +116,8 @@ int main(){
     } 
     int k;
     cin>> k;
+    int val;
+    cin>> val;
 
 
     //deletion 
@@ -107,6 +125,7 @@ int main(){
     // head = removenum(head,k); 
 
     //insertion 
+    head=insertatk(head,k,val);
 
     //printing the LL
     node*temp= head;
