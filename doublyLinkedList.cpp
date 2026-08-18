@@ -116,8 +116,40 @@
 
 
     node* insertatk(node*head,int k,int val){
-         
+         node* newnode = new node(val);
+         if(head==nullptr) return newnode;
+         int cnt=1;
+         if(k==1){
+             head->prev =newnode;
+             newnode->next=head;
+             head=head->prev;
+             return head;
+            }
 
+
+        node* temp=head;
+        node* previ ;
+         while (temp!=nullptr){
+            if(cnt==k){
+                temp->prev->next=newnode;
+                newnode->next=temp;
+                temp->next->prev=newnode;
+                newnode->prev=temp->prev;
+                
+                return head;
+            }
+            cnt++;
+            previ=temp;
+            temp=temp->next;
+         }
+
+         if(previ->next==nullptr&&cnt==k){
+            previ->next=newnode;
+            newnode->prev=previ;
+            return head;
+         }
+         return head;
+       
     }
 
 
